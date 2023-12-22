@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Daftar Pemilih Tetap</title>
+        <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+    <body>
+        <table cellspacing="5" >
+            <thead>
+                <tr>                
+                    <td>NIK</td>
+                    <td>Nama</td>
+                    <td>Tempat Lahir</td>
+                    <td>Tanggal Lahir</td>
+                    <td>Alamat</td>
+                </tr>
+            </thead>
+            <tbody id="pemilulist">
+                <!-- using jinja syntax-->
+                {% for data in listpemilu %}
+                <tr>                    
+                    <td>{{ data.nik}}</td>
+                    <td>{{ data.nama }}</td>
+                    <td>{{ data.tempat_lahir }}</td>
+                    <td>{{ data.tanggal_lahir }}</td>
+                    <td>{{ data.alamat }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>        
+    </body>
+</html>
